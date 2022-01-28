@@ -10,4 +10,9 @@ const root = new Vue({
             { text: 'fare la spesa', done: true, }
         ],
     },
+    methods: {
+        cancelObject(index) {
+            this.tasksToDO = this.tasksToDO.filter((item, i) => index !== i);
+        },
+    },
 });

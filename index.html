@@ -37,7 +37,11 @@
         <main>
             <div class="container">
                 <ul class="list-group">
-                    <li v-for="(task, index) in tasksToDO" class="list-group-item text-uppercase">{{task.text}}</li>
+                    <li v-for="(task, index) in tasksToDO" class="list-group-item text-uppercase d-flex">
+                        <span class="flex-grow-1">{{task.text}}</span>
+                        <button type="button" class="btn-close" aria-label="Close"
+                            @click="cancelObject(index)"></button>
+                    </li>
                 </ul>
             </div>
         </main>

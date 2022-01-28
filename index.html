@@ -36,13 +36,14 @@
 
         <main>
             <div class="container">
-                <ul class="list-group">
+                <ul class="list-group" v-if="(tasksToDO.length >= 1)">
                     <li v-for="(task, index) in tasksToDO" class="list-group-item text-uppercase d-flex">
                         <span class="flex-grow-1">{{task.text}}</span>
                         <button type="button" class="btn-close" aria-label="Close"
                             @click="cancelObject(index)"></button>
                     </li>
                 </ul>
+                <h3 v-else class="text-white text-uppercase text-center">Add New Tasks</h3>
             </div>
         </main>
     </div>

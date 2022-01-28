@@ -17,39 +17,45 @@
 
 <body>
     <div id="root">
-        <nav class="navbar navbar-light">
-            <div class="container">
-                <div class="row ">
-                    <div class="col-2">
-                        <a class="navbar-brand" href="#">
-                            <img src="img/to-do-list-colored-outline-icon-checklist-vector-20942372.jpg" alt=""
-                                class="d-inline-block  img-fluid">
-                        </a>
-                    </div>
-                    <div class="col-10 d-flex justify-content-end align-items-center">
-                        <span id="title" class="text-uppercase fs-1">To Do list</span>
+        <div id="wrapper">
+            <nav class="navbar navbar-light">
+                <div class="container">
+                    <div class="row ">
+                        <div class="col-2">
+                            <a class="navbar-brand" href="#">
+                                <img src="img/to-do-list-colored-outline-icon-checklist-vector-20942372.jpg" alt=""
+                                    class="d-inline-block  img-fluid">
+                            </a>
+                        </div>
+                        <div class="col-10 d-flex justify-content-end align-items-center">
+                            <span id="title" class="text-uppercase fs-1">To Do list</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
 
 
-        <main>
-            <div class="container">
-                <div class="d-flex mb-4">
-                    <input type="text" placeholder="Add New Task" class="flex-grow-1" v-model="newTask">
-                    <button type="button" class="btn btn-dark px-5" @click="addNewTask">Dark</button>
+            <main>
+                <div class="container">
+                    <div class="d-flex mb-4">
+                        <input type="text" placeholder="Add New Task" class="flex-grow-1" v-model="newTask"
+                            v-on:keyup.enter="addNewTask">
+                        <button type="button" class="btn btn-dark px-5 text-uppercase" @click="addNewTask">add</button>
+                    </div>
+                    <ul class="list-group" v-if="(tasksToDO.length >= 1)">
+                        <li v-for="(task, index) in tasksToDO"
+                            class="list-group-item text-uppercase d-flex align-items-center">
+                            <i class="me-2" :class="task.done ? 'far fa-check-square' : 'far fa-square'"
+                                @click="markAsDoneOrNot(index)"></i>
+                            <span class="flex-grow-1" :class="task.done ? 'text-tr' : ''">{{task.text}}</span>
+                            <button type="button" class="btn-close" aria-label="Close"
+                                @click="cancelObject(index)"></button>
+                        </li>
+                    </ul>
+                    <h3 v-else class="text-white text-uppercase text-center">Add New Tasks</h3>
                 </div>
-                <ul class="list-group" v-if="(tasksToDO.length >= 1)">
-                    <li v-for="(task, index) in tasksToDO" class="list-group-item text-uppercase d-flex">
-                        <span class="flex-grow-1">{{task.text}}</span>
-                        <button type="button" class="btn-close" aria-label="Close"
-                            @click="cancelObject(index)"></button>
-                    </li>
-                </ul>
-                <h3 v-else class="text-white text-uppercase text-center">Add New Tasks</h3>
-            </div>
-        </main>
+            </main>
+        </div>
     </div>
     <script src="js/script.js"></script>
 </body>

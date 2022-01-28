@@ -32,11 +32,15 @@
                 </div>
             </div>
         </nav>
-    </div>
 
-    <main>
 
-    </main>
+        <main>
+            <div class="container">
+                <ul class="list-group">
+                    <li v-for="(task, index) in tasksToDO" class="list-group-item text-uppercase">{{task.text}}</li>
+                </ul>
+            </div>
+        </main>
     </div>
     <script src="js/script.js"></script>
 </body>

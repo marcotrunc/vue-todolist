@@ -1,10 +1,11 @@
 
 /**NAVBAR**/
-.navbar{
+.navbar, main{
     width: 900px;
     margin: 0 auto;
    background-color: black;
    color:white ;
+   border-radius: 10px;
 }
 #title{
 color:#1ac6ef;
@@ -13,4 +14,10 @@ text-shadow: 2px 2px 0px #961fcf;
 
 :root{
     --bs-my-black:#050505;
+}
+/**MAIN**/
+main{
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
 }

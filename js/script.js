@@ -5,7 +5,6 @@ const root = new Vue({
     el: '#root',
     data: {
         newTask: '',
-        isDone: 'false',
         tasksToDO: [
             { text: 'tagliare i capelli', done: false, },
             { text: 'tagliare il prato', done: false, },
@@ -27,6 +26,9 @@ const root = new Vue({
         markAsDoneOrNot(index) {
             this.tasksToDO.map((item, i) => {
                 if (index === i) this.tasksToDO[i].done = !this.tasksToDO[i].done;
+            });
+            this.tasksToDO.map((item, i) => {
+                if (index === i) this.isDone = !this.tasksToDO[i].done;
             });
         }
 

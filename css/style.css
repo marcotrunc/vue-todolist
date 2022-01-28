@@ -19,9 +19,6 @@ color:#1ac6ef;
 text-shadow: 2px 2px 0px #961fcf;
 }
 
-:root{
-    --bs-my-black:#050505;
-}
 /**MAIN**/
 main{
     margin-top: 20px;
@@ -31,4 +28,17 @@ main{
 
 .text-tr{
     text-decoration: line-through;
+}
+/**BTN GROUP**/    
+#button-group [type=button]{
+   border: 2px solid #961fcf;
+   margin: 0 10px;
+}
+
+
+
+
+
+:root{
+--bs-my-black:#050505;
 }

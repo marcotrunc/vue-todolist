@@ -27,10 +27,19 @@ const root = new Vue({
             this.tasksToDO.map((item, i) => {
                 if (index === i) this.tasksToDO[i].done = !this.tasksToDO[i].done;
             });
+        },
+        markAllAsDone() {
             this.tasksToDO.map((item, i) => {
-                if (index === i) this.isDone = !this.tasksToDO[i].done;
+                this.tasksToDO[i].done = true;
             });
-        }
-
-    },
+        },
+        markAllAstoDo() {
+            this.tasksToDO.map((item, i) => {
+                this.tasksToDO[i].done = false;
+            });
+        },
+        deleteAll() {
+            this.tasksToDO = [];
+        },
+    }
 });
